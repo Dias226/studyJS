@@ -7,4 +7,4 @@ let period;
 
 alert('Hello, people!');
 
-console.log('Hello JS!');
+alert('Hello JS!');
