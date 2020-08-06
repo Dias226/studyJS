@@ -8,4 +8,3 @@ let period;
 alert('Hello, people!');
 
 console.log('Hello JS!');
-console.log('Hello, my friends!');
