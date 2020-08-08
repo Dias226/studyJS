@@ -9,3 +9,4 @@ alert('Hello, people!');
 
 console.log('Hello JS!');
 console.log('Hello, my friends!');
+console.log('Hello, my friendss!');
