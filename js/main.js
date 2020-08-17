@@ -9,11 +9,8 @@ const expenses1 = prompt('Введите обязательную статью �
 const amount1 = +prompt('Во сколько это обойдется?', 2500);
 const expenses2 = prompt('Введите обязательную статью расходов', 'Продукты');
 const amount2 = +prompt('Во сколько это обойдется?', 5000);
-const budgetMonth = money - amount1 - amount2;
 const mission = 200000;
 const period = 10;
-const budgetDay = Math.floor(budgetMonth / 30);
-const timeToReach = Math.ceil(mission / budgetMonth);
 
 let showTypeOf = function (data) {
   console.log(data, typeof (data));
@@ -26,13 +23,21 @@ let getExpensesMonth = function () {
   return amount1 + amount2;
 };
 
-console.log(getExpensesMonth());
+console.log('Расходы на месяц: ', +getExpensesMonth());
 
+function getAccumulatedMonth() {
+  return money - getExpensesMonth();
+}
+let accumulatedMonth = getAccumulatedMonth();
+const budgetDay = Math.floor(accumulatedMonth / 30);
+const timeToReach = Math.ceil(mission / accumulatedMonth);
+
+function getTargetMonth() {
+  return Math.ceil(mission / accumulatedMonth);
+}
+console.log('Цель будет достигнута за: ', getTargetMonth() + ' месяца(ев)');
 console.log('Период равен ' + period + ' месяцев');
-console.log('Цель заработать ' + mission + ' рублей');
-console.log('Бюджет на месяц: ', budgetMonth + ' рублей');
-console.log('Цель будет достигнута за: ', timeToReach + ' месяца(ев)');
-console.log(addExpenses.split(', '));
+console.log(addExpenses.toLocaleLowerCase().split(', '));
 console.log('Бюджет на день: ', budgetDay + ' рублей');
 
 let getStatusIncome = function () {
