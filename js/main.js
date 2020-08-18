@@ -1,5 +1,14 @@
 let money;
 
+const start = function () {
+  money = +prompt("Ваш месячный доход?");
+
+  while (isNaN(parseFloat(money))) {
+    money = +prompt("Ваш месячный доход?");
+  }
+};
+start();
+
 const income = "фриланс";
 const addExpenses = prompt(
   "Перечислите возможные расходы за рассчитываемый период через запятую"
@@ -11,15 +20,6 @@ const expenses2 = prompt("Введите обязательную статью �
 const amount2 = +prompt("Во сколько это обойдется?", 5000);
 const mission = 200000;
 const period = 10;
-
-const start = function () {
-  money = +prompt("Ваш месячный доход?");
-
-  while (isNaN(parseFloat(money))) {
-    money = +prompt("Ваш месячный доход?");
-  }
-};
-start();
 
 const showTypeOf = function (data) {
   console.log(data, typeof data);
