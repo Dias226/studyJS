@@ -47,7 +47,7 @@ appData.getAccumulatedMonth = function () {
 };
 
 appData.getTargetMonth = function () {
-  return Math.ceil(appData.mission / getAccumulatedMonth);
+  return Math.ceil(appData.mission / appData.getAccumulatedMonth);
 };
 
 appData.statusIncome = function () {
