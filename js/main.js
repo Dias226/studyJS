@@ -12,8 +12,6 @@ const start = function () {
 };
 start();
 
-
-
 let appData = {
   income: {},
   addIncome: [],
