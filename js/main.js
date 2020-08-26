@@ -32,6 +32,7 @@ const appData = {
     appData.deposit = confirm("Есть ли у вас депозит в банке?");
 
     for (let i = 0; i < 2; i++) {
+      let amount;
       const cost = prompt("Введите обязательную статью расходов");
       do {
         amount = prompt("Во сколько это обойдется?");
