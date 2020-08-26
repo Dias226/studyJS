@@ -45,17 +45,8 @@ const appData = {
       "Перечислите возможные расходы за рассчитываемый период через запятую"
     );
     appData.addExpenses = addExpenses.toLocaleLowerCase().split(", ");
-    // for (let word of appData.addExpenses) {
-    //   word = word[0].toUpperCase() + word.slice(1);}
-
-
-
     appData.addExpenses = addExpenses.split(', ')
       .map(word => `${word.charAt(0).toUpperCase()}${word.slice(1).toLocaleLowerCase()}`);
-    // appData.addExpenses.forEach(word => {
-    //   console.log(word);
-    // });
-
 
     appData.deposit = confirm("Есть ли у вас депозит в банке?");
 
