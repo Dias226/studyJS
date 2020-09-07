@@ -33,10 +33,13 @@ const isNumber = function (n) {
 };
 
 start.setAttribute('disabled', 'disabled');
+// start.disabled = true;
 
 salaryAmount.addEventListener('input', function () {
-  if (salaryAmount.value !== "") {
-    start.removeAttribute('disabled', 'disabled');
+  if (salaryAmount.value !== "" && salaryAmount.value !== null) {
+    start.removeAttribute('disabled');
+  } else {
+    start.setAttribute('disabled', 'disabled');
   }
 });
 
