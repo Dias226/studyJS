@@ -42,6 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  depositAmount.addEventListener('input', () => {
+    if (depositAmount.value !== "") {
+      start.removeAttribute('disabled');
+    } else {
+      start.setAttribute('disabled', 'disabled');
+    }
+  });
+
   class AppData {
     constructor() {
       this.budget = 0;
@@ -72,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       start.style.display = 'none';
       cancel.style.display = 'block';
       checkBox.setAttribute('disabled', 'disabled');
+      depositBank.setAttribute('disabled', 'disabled');
 
       this.budget = +salaryAmount.value;
 
@@ -160,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     getBudget() {
-      const monthDeposit = this.moneyDeposit * (this.percentDeposit / 100);
+      const monthDeposit = Math.ceil(this.moneyDeposit * (this.percentDeposit / 100));
       this.budgetMonth = this.budget + this.incomeMonth - this.expensesMonth + monthDeposit;
       this.budgetDay = Math.floor(this.budgetMonth / 30);
     }
@@ -220,6 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
       btnIncAdd.removeAttribute('disabled');
       checkBox.checked = false;
       checkBox.removeAttribute('disabled');
+      depositBank.removeAttribute('disabled');
+      depositBank.value = '';
+
+      depositBank.style.display = "none";
+      depositAmount.style.display = "none";
+      depositPercent.style.display = "none";
     }
     changePercent() {
       const valueSelect = this.value;
